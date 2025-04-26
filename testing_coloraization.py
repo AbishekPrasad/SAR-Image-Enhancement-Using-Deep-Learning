@@ -3,8 +3,8 @@ import numpy as np
 import matplotlib.pyplot as plt  
 
 # Paths to your one SAR L-image and one Optical RGB image
-sar_image_path = 'SAR.jpg'      # SAR grayscale image (0-255)
-optical_image_path = 'color.jpg'  # Optical RGB image
+sar_image_path = 'SAR-Image-1.jpg'      # SAR grayscale image (0-255)
+optical_image_path = 'Optical-Image-1.jpg'  # Optical RGB image
 
 # 1. Load the SAR image (grayscale)
 sar_gray = cv2.imread(sar_image_path, cv2.IMREAD_GRAYSCALE)  # shape: (H, W)
