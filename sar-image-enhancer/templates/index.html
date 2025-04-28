@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAR Image Enhancement</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-brand">SAR Image Enhancer</div>
+    </nav>
+
+    <div class="main-container">
+        <div id="loadingModel" class="loading-spinner" style="display: none;"></div>
+        
+        <div class="file-input-section">
+            <label for="imageInput" class="file-input-label">
+                <i class="material-icons">cloud_upload</i> Upload SAR Image
+            </label>
+            <input type="file" id="imageInput" class="file-input" accept="image/*" onchange="previewImage()" />
+        </div>
+
+        <div class="image-preview-container">
+            <div class="image-container">
+                <div id="originalSection" class="image-wrapper" style="display: none;">
+                    <h3>Original SAR Image</h3>
+                    <img id="imagePreview" src="#" alt="Input Image" class="image-preview" />
+                </div>
+                <div id="enhancedSection" class="image-wrapper" style="display: none;">
+                    <h3>Enhanced Optical Image</h3>
+                    <img id="outputImage" src="#" alt="Output Image" class="image-preview output-preview" />
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn generate-btn" onclick="generateOutput()">Generate Output</button>
+        </div>
+
+        <div class="download-section">
+            <button id="downloadBtn" class="action-btn download-btn" style="display: none;" onclick="downloadOutput()">
+                <i class="material-icons">file_download</i> Download Enhanced Image
+            </button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2025 SAR Image Enhancer. All rights reserved.</p>
+    </footer>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>
